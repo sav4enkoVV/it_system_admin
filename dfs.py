@@ -2,8 +2,8 @@ def dfs(graph, start, length, visited=None):
 
     try:
         if visited is None: # Осуществляем проверку посещения вершины
-            visited = set()
-        visited.add(start)
+            visited = set() # Посещена
+        visited.add(start) # Создана
     except Exception as err: # Иначе исключение с ошибкой
         print ("The node is not valid" + start)
         raise err
@@ -12,7 +12,7 @@ def dfs(graph, start, length, visited=None):
 
     print("Length is ", length)
 
-    for next in graph[start] - visited:
+    for next in graph[start] - visited: # Цикл, предназначенный для посещения вершин
         dfs(graph, next, length + 1, visited)
     return visited
 
