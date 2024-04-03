@@ -2,8 +2,6 @@ def dfs(graph, start, length, visited=None):
 
     try:
         if visited is None: # Checking the vertex visit
-            visited = set() # Visited
-        visited.add(start) # Created
     except Exception as err: # Otherwise, an exception with an error
         print ("The node is not valid" + start)
         raise err
