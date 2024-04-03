@@ -1,13 +1,15 @@
 def dfs(graph, start, length, visited=None):
+
     try:
-        if visited is None:
+        if visited is None: # Осуществляем проверку посещения вершины
             visited = set()
         visited.add(start)
-    except Exception as e:
-        print ("Node is not valid" + start)
-        raise e
+    except Exception as err: # Иначе исключение с ошибкой
+        print ("The node is not valid" + start)
+        raise err
 
-    print(start)
+    print("Start at ", start)
+
     print("Length is ", length)
 
     for next in graph[start] - visited:
@@ -15,12 +17,14 @@ def dfs(graph, start, length, visited=None):
     return visited
 
 
-graph = {'0': set(['2']),
-         '1': set(['3']),
-         '2': set(['0']),
-         '3': set(['1'])}
+graph = {
+    '0': set(['2']),
+    '1': set(['3']),
+    '2': set(['0']),
+    '3': set(['1'])
+    }
 
 
 ln = 0
 
-dfs(graph, '5', ln)
+dfs(graph, '7', ln)
