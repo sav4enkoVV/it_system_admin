@@ -1,10 +1,10 @@
 def dfs(graph, start, length, visited=None):
 
     try:
-        if visited is None:
+        if visited is None: # Осуществляем проверку посещения вершины
             visited = set()
         visited.add(start)
-    except Exception as err:
+    except Exception as err: # Иначе исключение с ошибкой
         print ("The node is not valid" + start)
         raise err
 
